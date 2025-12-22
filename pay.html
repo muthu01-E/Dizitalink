@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Payment</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <style>
+    .slide-panel { transition: transform 0.35s ease-in-out; }
+    .hidden-panel { transform: translateX(100%); }
+    .visible-panel { transform: translateX(0); }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white shadow-xl rounded-xl w-full max-w-md overflow-hidden relative" style="height: 650px;">
+
+  <!-- MAIN PANEL -->
+  <div id="mainPanel" class="p-6 slide-panel visible-panel">
+    <h2 class="text-lg font-semibold mb-4">Plan Details</h2>
+    <div class="border rounded-lg p-4 mb-6">
+      <p class="text-sm"><strong>Plan:</strong> Premium Membership</p>
+      <p class="text-sm"><strong>Amount:</strong> ₹999</p>
+    </div>
+
+    <h3 class="font-semibold mb-3">Select your UPI app</h3>
+
+    <div class="space-y-3">
+      <button onclick="openOptions('BHIM')" class="w-full border rounded-lg p-4 flex justify-between hover:bg-gray-50">
+        <span class="font-medium">BHIM</span><span>›</span>
+      </button>
+      <button onclick="openOptions('PhonePe')" class="w-full border rounded-lg p-4 flex justify-between hover:bg-gray-50">
+        <span class="font-medium">PhonePe</span><span>›</span>
+      </button>
+      <button onclick="openOptions('Paytm')" class="w-full border rounded-lg p-4 flex justify-between hover:bg-gray-50">
+        <span class="font-medium">Paytm</span><span>›</span>
+      </button>
+      <button onclick="openOptions('GPay')" class="w-full border rounded-lg p-4 flex justify-between hover:bg-gray-50">
+        <span class="font-medium">GPay</span><span>›</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SLIDE PANEL -->
+  <div id="optionPanel" class="p-6 slide-panel hidden-panel absolute top-0 left-0 bg-white w-full h-full">
+    <button onclick="goBack()" class="text-blue-600 mb-4">← Back</button>
+    <h3 id="selectedApp" class="text-xl font-semibold mb-4"></h3>
+
+    <!-- QR SECTION -->
+    <div class="border rounded-lg p-4 mb-6 text-center">
+      <p class="font-semibold mb-3">Scan QR & Pay</p>
+      <canvas id="qrCode" class="mx-auto"></canvas>
+      <p class="text-xs text-gray-500 mt-3">Scan using any UPI app</p>
+    </div>
+
+    <!-- UPI ID SECTION -->
+    <div class="border rounded-lg p-4">
+      <label class="block text-sm font-medium mb-2">Enter your UPI ID</label>
+      <input id="upiInput" type="text" placeholder="example@upi" class="w-full border p-3 rounded-lg mb-3">
+      <button onclick="payViaUPI()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold">
+        Pay ₹999
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const merchantUPI = ""; // CHANGE THIS
+  const merchantName = "Your Business";
+  const amount = "999";
+  let selectedApp = "";
+
+  function openOptions(app) {
+    selectedApp = app;
+    document.getElementById('selectedApp').innerText = app + ' Payment';
+
+    const upiURL = `upi://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&cu=INR`;
+    QRCode.toCanvas(document.getElementById('qrCode'), upiURL, { width: 200 });
+
+    document.getElementById('mainPanel').classList.replace('visible-panel','hidden-panel');
+    document.getElementById('optionPanel').classList.replace('hidden-panel','visible-panel');
+  }
+
+  function payViaUPI() {
+    const userUPI = document.getElementById('upiInput').value.trim();
+    if (!userUPI.includes('@')) {
+      alert('Please enter a valid UPI ID');
+      return;
+    }
+
+    let deepLink = `upi://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&cu=INR`;
+
+    if (selectedApp === 'PhonePe') deepLink = deepLink.replace('upi://', 'phonepe://');
+    if (selectedApp === 'Paytm') deepLink = deepLink.replace('upi://', 'paytmmp://');
+    if (selectedApp === 'GPay') deepLink = deepLink.replace('upi://', 'tez://upi/');
+
+    window.location.href = deepLink;
+  }
+
+  function goBack() {
+    document.getElementById('optionPanel').classList.replace('visible-panel','hidden-panel');
+    document.getElementById('mainPanel').classList.replace('hidden-panel','visible-panel');
+  }
+</script>
+
+</body>
+</html>

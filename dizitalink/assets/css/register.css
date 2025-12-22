@@ -1,0 +1,122 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: url("backgroundauth.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= REGISTER SECTION ================= */
+.register-container {
+  width: 90%;
+  max-width: 950px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+/* ================= LEFT ================= */
+.register-left {
+  background: linear-gradient(135deg, #f2d381,#1f2d1a);
+  padding: 60px 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.auth-logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+.register-left h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.register-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ================= RIGHT ================= */
+.register-right {
+  padding: 55px 40px;
+}
+
+.register-right h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.register-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-right input {
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.register-right input:focus {
+  outline: none;
+  border-color: #2f6b5f;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  background: #2f6b5f;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #245348;
+}
+
+/* ================= LINKS ================= */
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #2f6b5f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+
+  .register-left {
+    display: none;
+  }
+}

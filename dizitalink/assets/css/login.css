@@ -1,0 +1,166 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  color: #2f6b5f;
+  background: url("backgroundauth.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= LOGIN CONTAINER ================= */
+.login-container {
+  width: 90%;
+  max-width: 950px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+/* ================= LEFT ================= */
+.login-left {
+  background: linear-gradient(135deg,#f2d381,#1f2d1a);
+  padding: 60px 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.auth-logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+.login-left h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ================= RIGHT ================= */
+.login-right {
+  padding: 55px 40px;
+}
+
+.login-right h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-right input {
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.login-right input:focus {
+  outline: none;
+  border-color: #2f6b5f;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  background: #1f2d1a;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #245348;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  text-align: center;
+  margin: 22px 0;
+  position: relative;
+}
+
+.divider span {
+  background: #fff;
+  padding: 0 12px;
+  color: #777;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  z-index: -1;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-google img {
+  width: 20px;
+}
+
+/* ================= LINKS ================= */
+.extra-links {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.extra-links a {
+  color: #2f6b5f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left {
+    display: none;
+  }
+}

@@ -1,0 +1,91 @@
+ /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* HERO BACKGROUND */
+.auth-hero {
+  min-height: 100vh;
+  background: url("backgroundauth.jpg");
+
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* CONTENT */
+.auth-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* LOGO */
+.auth-logo {
+  height: 60px;
+  margin-bottom: 25px;
+}
+
+/* TEXT */
+.auth-content h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.auth-content p {
+  font-size: 18px;
+  color: #d9e2dc;
+  margin-bottom: 40px;
+}
+
+/* BUTTONS */
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.login-btn {
+  background: #3c7c73;
+  color: #fff;
+}
+
+.login-btn:hover {
+  background: #2f625a;
+}
+
+.register-btn {
+  border: 2px solid #f6d98c;
+  color: #f6d98c;
+}
+
+.register-btn:hover {
+  background: #f6d98c;
+  color: #1b1b1b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .auth-content h1 {
+    font-size: 36px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+  }
+}

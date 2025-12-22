@@ -1,0 +1,32 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 15 Dec 2025 20:36:05 at https://bestwpware.com//html/tf/digiv/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://bestwpware.com//html/tf/digiv/index.html -O1 "E:\winhttrack base path\dizitalink" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+20:38:08	Error: 	"Not Found" (404) at link https://bestwpware.com/html/tf/digiv/assets/css/ajax-loader.gif (from https://bestwpware.com//html/tf/digiv/assets/css/slick-theme.css)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/about/Frame_15.svg (1) (from https://bestwpware.com//html/tf/digiv/about.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/about/Frame_16.svg (1) (from https://bestwpware.com//html/tf/digiv/about.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/testimonail/quotes 2.svg (from https://bestwpware.com//html/tf/digiv/about.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/services/Frame_17.svg (from https://bestwpware.com//html/tf/digiv/services.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/services/abstract-shape3.svg (from https://bestwpware.com//html/tf/digiv/services.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/services/abstract-shape1.svg (from https://bestwpware.com//html/tf/digiv/services.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/services/service.png (from https://bestwpware.com//html/tf/digiv/service_details.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/projects/4.png (from https://bestwpware.com//html/tf/digiv/service_details.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/about/Frame_13.svg (1) (from https://bestwpware.com//html/tf/digiv/pricing.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/about/Frame_14.svg (1) (from https://bestwpware.com//html/tf/digiv/pricing.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/projects/2.png (from https://bestwpware.com//html/tf/digiv/projects.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/projects/3.png (from https://bestwpware.com//html/tf/digiv/projects.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/icons/clender.svg (from https://bestwpware.com//html/tf/digiv/blog.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/icons/Frame_20.svg (from https://bestwpware.com//html/tf/digiv/blog_details.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/blogs/comment1.png (from https://bestwpware.com//html/tf/digiv/blog_details.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/img/blogs/comment2.png (from https://bestwpware.com//html/tf/digiv/blog_details.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/icons/location.svg (from https://bestwpware.com//html/tf/digiv/contact.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/icons/phone.svg (from https://bestwpware.com//html/tf/digiv/contact.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/assets/icons/email1.svg (from https://bestwpware.com//html/tf/digiv/contact.html)
+20:38:08	Error: 	"Too Many Requests" (429) at link https://bestwpware.com//html/tf/digiv/dist/ (from https://bestwpware.com//html/tf/digiv/assets/js/aos.js)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 3 seconds : 104 links scanned, 81 files written (6745436 bytes overall) [5900919 bytes received at 47974 bytes/sec], 1236228 bytes transferred using HTTP compression in 57 files, ratio 20%, 14.0 requests per connection
+(21 errors, 0 warnings, 0 messages)
