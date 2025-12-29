@@ -1,0 +1,52 @@
+body { margin: 0; font-family: Segoe UI; }
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1f2d1a;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #f7f7f7;
+}
+body { margin: 0; font-family: Segoe UI; }
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #1f2d1a;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  background: #f7f7f7;
+}

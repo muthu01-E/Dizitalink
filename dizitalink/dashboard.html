@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | Dizitalink</title>
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>Dizitalink</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Subscriptions</a>
+    <a href="#">Profile</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </aside>
+
+  <main class="content">
+    <h1>Welcome 👋</h1>
+    <p>Your services & subscriptions appear here.</p>
+  </main>
+</div>
+
+<script>
+function logout() {
+  localStorage.removeItem("token");
+  location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
