@@ -66,42 +66,38 @@
 </div>
 
 <script>
-  const merchantUPI = ""; // CHANGE THIS
+  const merchantUPI = "merchant@upi"; // CHANGE THIS
   const merchantName = "Your Business";
   const amount = "999";
   let selectedApp = "";
 
-  function openOptions(app) {
-    selectedApp = app;
-    document.getElementById('selectedApp').innerText = app + ' Payment';
+  async function openOptions(app) {
+  selectedApp = app;
+  const payload = { name: null, email: null, upi_id: null, plan: 'premium', amount: 999, selected_app: app };
+  const res = await fetch('http://localhost:8000/api/subscriptions', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload),
+  });
+  const data = await res.json();
+  // data.deeplinks.default or data.deeplinks[app] contains the uri to QR/intent
+  const uri = (data.deeplinks && data.deeplinks[app]) || data.deeplinks.default;
+  QRCode.toCanvas(document.getElementById('qrCode'), uri, { width: 200 });
+  document.getElementById('selectedApp').innerText = app + ' Payment';
+  document.getElementById('mainPanel').classList.replace('visible-panel','hidden-panel');
+  document.getElementById('optionPanel').classList.replace('hidden-panel','visible-panel');
+  // store sub id for confirmation if needed: window.currentSubId = data.subscription.id;
+}
 
-    const upiURL = `upi://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&cu=INR`;
-    QRCode.toCanvas(document.getElementById('qrCode'), upiURL, { width: 200 });
-
-    document.getElementById('mainPanel').classList.replace('visible-panel','hidden-panel');
-    document.getElementById('optionPanel').classList.replace('hidden-panel','visible-panel');
-  }
-
-  function payViaUPI() {
-    const userUPI = document.getElementById('upiInput').value.trim();
-    if (!userUPI.includes('@')) {
-      alert('Please enter a valid UPI ID');
-      return;
-    }
-
-    let deepLink = `upi://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&cu=INR`;
-
-    if (selectedApp === 'PhonePe') deepLink = deepLink.replace('upi://', 'phonepe://');
-    if (selectedApp === 'Paytm') deepLink = deepLink.replace('upi://', 'paytmmp://');
-    if (selectedApp === 'GPay') deepLink = deepLink.replace('upi://', 'tez://upi/');
-
-    window.location.href = deepLink;
-  }
-
-  function goBack() {
-    document.getElementById('optionPanel').classList.replace('visible-panel','hidden-panel');
-    document.getElementById('mainPanel').classList.replace('hidden-panel','visible-panel');
-  }
+async function payViaUPI() {
+  const userUPI = document.getElementById('upiInput').value.trim();
+  if (!userUPI.includes('@')) { alert('Please enter a valid UPI ID'); return; }
+  // Optionally update the subscription with user's UPI via another API call
+  // Then redirect:
+  // Use the deeplink stored earlier or request the subscription again
+  const deeplink = /* previously obtained deeplink for selectedApp */ window.latestDeeplink;
+  window.location.href = deeplink;
+}
 </script>
 
 </body>

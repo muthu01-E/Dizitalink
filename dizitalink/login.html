@@ -71,7 +71,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("https://YOUR-BACKEND-DOMAIN/api/auth/login", {
+  const res = await fetch("http://127.0.0.1:8000/api/auth/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password })
@@ -89,7 +89,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
   // FRONTEND REDIRECT LOGIC (THIS IS IT)
   if (data.role === "admin") {
-    window.location.href = "admin-dashboard.html";
+    window.location.href = "admin_dashboard.html";
   } else {
     window.location.href = "dashboard.html";
   }
